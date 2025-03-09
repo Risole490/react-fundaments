@@ -1,0 +1,6 @@
+// Instalamos o babel core, preset-env e cli 
+// Configuramos para que a pasta src seja transpilada pelo babel e jogar na pasta build
+// Instalamos babel preset-react
+{ 
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}

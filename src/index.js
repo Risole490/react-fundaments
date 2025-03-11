@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import App from './App'; // Importando o componente App
 
+import './index.css'; // Importando o arquivo de estilos
+
 ReactDOM.render(
   <App />,
   document.getElementById('root'),

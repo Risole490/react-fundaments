@@ -25,7 +25,18 @@ module.exports = {
         exclude: /node_modules/, // Aqui definimos que o Babel não deve transpilar os arquivos dentro da pasta node_modules
         use: 'babel-loader', // Aqui definimos que o webpack deve usar o Babel para transpilar todos os arquivos .js
       }, 
-      {},
+      {
+        test: /\.css$/, // Aqui definimos que o webpack deve transpilar os arquivos .css
+        use: [ // Aqui definimos que o webpack deve usar o style-loader e o css-loader para transpilar os arquivos .css
+          'style-loader', 
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true, // Habilita o uso de CSS Modules
+            }
+          }
+        ], 
+      },
     ]
   },
   devServer: {

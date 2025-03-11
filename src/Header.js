@@ -2,19 +2,23 @@ import React, {useContext} from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
 
+import styles from './Header.css';
+
+console.log(styles);
+
 import { ThemeContext } from "./ThemeContext";
 
 export default function Header(props) {
   const { onToggleTheme } = useContext(ThemeContext);
 
   return (
-    <>
-      <h1>{props.title}</h1>
+    <div>
+      <h1 className="title">{props.title}</h1>
       <Button onClick={onToggleTheme}>
         Mudar tema
       </Button>
       {props.children}
-    </>
+    </div>
   );
 }
 

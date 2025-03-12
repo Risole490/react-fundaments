@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types'; // Importando o PropTypes para validar as props
 import PostHeader from './PostHeader';
 
+import * as styles from './Post.scss';
+
 export default function Post(props) {
   // console.log(props);
   // if(props.post.read){
@@ -9,8 +11,13 @@ export default function Post(props) {
   // }
 
   return (
-    <>
-      <article>
+      <article 
+        className={
+          props.post.removed
+            ? styles.postDeleted
+            : styles.post
+        }
+      >
         <PostHeader
           onRemove={props.onRemove}
           post={{
@@ -24,8 +31,6 @@ export default function Post(props) {
         <br />
         Media: {props.post.likes / 2}
       </article>
-      <br />
-    </>
   );
 }
 
@@ -37,5 +42,6 @@ Post.propTypes = {
     subtitle: PropTypes.string.isRequired,
     likes: PropTypes.number.isRequired, // Obrigatório e do tipo number
     read: PropTypes.bool.isRequired, // Obrigatório e do tipo boolean
+    removed: PropTypes.bool.isRequired, // Obrigatório e do tipo boolean
   }).isRequired,
 };

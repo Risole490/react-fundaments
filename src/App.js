@@ -4,7 +4,7 @@ import Post from './Post';
 import Header from './Header';
 import { ThemeProvider } from './ThemeContext';
 
-import * as styles from './App.css';
+import * as styles from './App.scss';
 
 function App() {
   // useState é um Hook que permite adicionar o estado do React a um componente de função
@@ -12,9 +12,9 @@ function App() {
   // setPosts é a função que atualiza o estado
   // useState([]) é o valor inicial do estado
   const [posts, setPosts] = useState([
-    { id: Math.random(), title: 'Título da notícia 01', subtitle: 'Subtítulo da notícia 01', likes: 20, read: false },
-    { id: Math.random(), title: 'Título da notícia 02', subtitle: 'Subtítulo da notícia 02', likes: 10, read: true },
-    { id: Math.random(), title: 'Título da notícia 03', subtitle: 'Subtítulo da notícia 03', likes: 50, read: false },
+    { id: Math.random(), title: 'Título da notícia 01', subtitle: 'Subtítulo da notícia 01', likes: 20, read: false, removed: false },
+    { id: Math.random(), title: 'Título da notícia 02', subtitle: 'Subtítulo da notícia 02', likes: 10, read: true, removed: true },
+    { id: Math.random(), title: 'Título da notícia 03', subtitle: 'Subtítulo da notícia 03', likes: 50, read: false, removed: false },
   ]);
 
   function handleRefresh() { // Função que será executada ao clicar no botão "Atualizar"
@@ -34,8 +34,16 @@ function App() {
   }
 
   function handleRemovePost(postId) {
+    // setPosts((prevState) => (
+    //   prevState.filter(post => post.id !== postId)
+    // ));
+
     setPosts((prevState) => (
-      prevState.filter(post => post.id !== postId)
+      prevState.map(post => (
+        post.id === postId
+          ? {...post, removed: true}
+          : post
+      ))
     ))
   }
 

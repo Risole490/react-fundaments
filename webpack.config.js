@@ -32,12 +32,12 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true, // Habilita o uso de CSS Modules
-            }
-          }
+              modules: true, // Habilita o uso de módulos CSS
+            },
+          },
         ], 
       },
-    ]
+    ],
   },
   devServer: {
     port: 3000, // Porta onde o servidor de desenvolvimento será executado

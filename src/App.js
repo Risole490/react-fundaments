@@ -4,6 +4,8 @@ import Post from './Post';
 import Header from './Header';
 import { ThemeProvider } from './ThemeContext';
 
+import * as styles from './App.css';
+
 function App() {
   // useState é um Hook que permite adicionar o estado do React a um componente de função
   // posts é o nome da variável que armazena o estado
@@ -40,7 +42,7 @@ function App() {
   return (
     <ThemeProvider>
       <Header>
-        <h2>
+        <h2 className={styles.title}>
           Posts da semana
           <button onClick={handleRefresh}>Atualizar</button>
         </h2>

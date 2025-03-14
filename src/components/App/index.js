@@ -1,8 +1,8 @@
 import React, {useState} from 'react'; // O uso do React é obrigatório em todos os arquivos que contém JSX
 
-import Post from './Post';
-import Header from './Header';
-import { ThemeProvider } from './ThemeContext';
+import Post from '../Post';
+import Header from '../Header';
+import { ThemeProvider } from '../../context/ThemeContext';
 
 import * as styles from './App.scss';
 

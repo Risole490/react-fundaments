@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'; // Importando o PropTypes para validar as props
-import Button from './Button';
+
+import Button from '../Button';
 
 export default function PostHeader(props) {
   return (

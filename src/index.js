@@ -1,11 +1,14 @@
 import React from 'react'; // O uso do React é obrigatório em todos os arquivos que contém JSX
 import ReactDOM from 'react-dom';
 
-import App from './App'; // Importando o componente App
+import GlobalStyle from './styles/global';
 
-import './index.scss'; // Importando o arquivo de estilos
+import App from './components/App'; // Importando o componente App
 
 ReactDOM.render(
-  <App />,
+  <>
+    <GlobalStyle />
+    <App />
+  </>,
   document.getElementById('root'),
 );
